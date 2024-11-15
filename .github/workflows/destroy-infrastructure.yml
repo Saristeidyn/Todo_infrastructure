@@ -29,8 +29,8 @@ jobs:
           mkdir keys
           echo "${{ secrets.SSH_PRIVATE_KEY }}" > ./keys/saray_server
           echo "${{ secrets.SSH_PUBLIC_KEY }}" > ./keys/saray_server.pub
-          chmod 777 ./keys/saray-server
-          chmod 777 ./keys/saray-server.pub
+          chmod 777 ./keys/saray_server
+          chmod 777 ./keys/saray_server.pub
       - name: Terraform Init
         run: terraform init
 
