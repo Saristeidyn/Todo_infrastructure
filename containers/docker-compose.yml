@@ -1,19 +1,19 @@
 services:
-reverse-proxy:
-  image: nginxproxy/nginx-proxy:alpine
-  container_name: 'Reverse-Proxy'
-  restart: always
-  ports:
-    - "80:80"
-    - "443:443"
-  enviorment:
-    - VITRAL_HOST=${DOMAIN}
-    - VITRAL_PATH=/.well_known
-  volumees:
-    - /volmes/nginx/certs:/etc/nginx/certs:ro
-    - /volmes/nginx/vhostd:/etc/nginx/vhost.d
-    - /volmes/nginx/html:/usr/share/nginx/html:rw
-    - /var/run/docker.sock:/tmp/docker.sock:ro
+  reverse-proxy:
+    image: nginxproxy/nginx-proxy:alpine
+    container_name: 'Reverse-Proxy'
+    restart: always
+    ports:
+      - "80:80"
+      - "443:443"
+    enviorment:
+      - VITRAL_HOST=${DOMAIN}
+      - VITRAL_PATH=/.well_known
+    volumees:
+      - /volumes/nginx/certs:/etc/nginx/certs:ro
+      - /volumes/nginx/vhostd:/etc/nginx/vhost.d
+      - /volumes/nginx/html:/usr/share/nginx/html:rw
+      - /var/run/docker.sock:/tmp/docker.sock:ro
 
   lets-encrypt:
     image: jrcs/letsencrypt-nginx-proxy-companion
@@ -22,9 +22,9 @@ reverse-proxy:
     enviorment:
       - NGINX_PROXY_CONTAINER=value
     volumes:
-      - /volmes/nginx/certs:/etc/nginx/certs
-      - /volmes/nginx/vhostd:/etc/nginx/vhost.d
-      - /volmes/nginx/html:/usr/share/nginx/html:rw
+      - /volumes/nginx/certs:/etc/nginx/certs
+      - /volumes/nginx/vhostd:/etc/nginx/vhost.d
+      - /volumes/nginx/html:/usr/share/nginx/html:rw
       - /var/run/docker.sock:/tmp/docker.sock:ro
 
   mysql:
@@ -46,6 +46,7 @@ reverse-proxy:
   todo-api:
     image: saraymartinez002/examen_2parcial:latest
     container_name: TodoApi
+    restart: always
     expose:
       - "80"
     environment:

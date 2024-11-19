@@ -1,4 +1,4 @@
-name: Deploy Juan Server
+name: Deploy Saray Server
 
 on:
   push:

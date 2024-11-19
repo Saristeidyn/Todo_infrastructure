@@ -1,7 +1,7 @@
-name: Deploy Juan Server
+name: Destroy Saray Server
 
 on:
-  workflow_dispach:
+  workflow_distpach:
 
 env:
   AWS_ACCCES_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
