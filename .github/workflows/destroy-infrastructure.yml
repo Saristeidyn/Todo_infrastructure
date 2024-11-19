@@ -1,7 +1,7 @@
 name: Destroy Saray Server
 
 on:
-  workflow_distpach:
+  workflow_dispatch:
 
 env:
   AWS_ACCCES_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
