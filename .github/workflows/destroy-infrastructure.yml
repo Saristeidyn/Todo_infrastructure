@@ -1,4 +1,4 @@
-name: Destroy Saray Server
+name: Destroy Saray_Server
 
 on:
   workflow_dispatch:
