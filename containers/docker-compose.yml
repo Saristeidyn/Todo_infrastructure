@@ -6,7 +6,7 @@ services:
     ports:
       - "80:80"
       - "443:443"
-    enviorment:
+    environment:
       - VITRAL_HOST=${DOMAIN}
       - VITRAL_PATH=/.well_known
     volumees:
@@ -19,7 +19,7 @@ services:
     image: jrcs/letsencrypt-nginx-proxy-companion
     container_name: 'Lets-Encrypt'
     restart: always
-    enviorment:
+    environment:
       - NGINX_PROXY_CONTAINER=value
     volumes:
       - /volumes/nginx/certs:/etc/nginx/certs
