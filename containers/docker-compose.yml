@@ -9,7 +9,7 @@ services:
     environment:
       - VITRAL_HOST=${DOMAIN}
       - VITRAL_PATH=/.well_known
-    volumees:
+    volumes:
       - /volumes/nginx/certs:/etc/nginx/certs:ro
       - /volumes/nginx/vhostd:/etc/nginx/vhost.d
       - /volumes/nginx/html:/usr/share/nginx/html:rw
